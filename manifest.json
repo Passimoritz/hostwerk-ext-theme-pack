@@ -1,0 +1,248 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Passimoritz/hostwerk-public/main/sdk/manifest.schema.json",
+  "id": "theme-pack",
+  "name": {
+    "de": "Farbschemata",
+    "en": "Themes"
+  },
+  "description": {
+    "de": "Drei sorgfältig abgestimmte Farbschemata für Hostwerk – „Hoher Kontrast“ für schwächere Augen, „Ruhig“ und „Warm“, jeweils hell und dunkel und auf gute Lesbarkeit geprüft.",
+    "en": "Three carefully tuned themes for Hostwerk – “High contrast” for weaker eyesight, “Calm” and “Warm”, each in light and dark and checked for good readability."
+  },
+  "version": "1.0.0",
+  "author": "Hostwerk",
+  "homepage": "https://github.com/Passimoritz/hostwerk-ext-theme-pack",
+  "license": "MIT",
+  "icon": "icon.svg",
+  "banner": "banner.svg",
+  "color": "#7c4dcc",
+  "category": "other",
+  "hostwerk": ">=2.11.0",
+  "permissions": [],
+  "contributes": {
+    "themes": [
+      {
+        "id": "high-contrast",
+        "title": {
+          "de": "Hoher Kontrast",
+          "en": "High contrast"
+        },
+        "description": {
+          "de": "Für schwächere Augen: reines Schwarz und Weiß, kräftige Zustandsfarben, deutliche Linien – Text mindestens 7:1.",
+          "en": "For weaker eyesight: pure black and white, strong status colours, clear lines – text at least 7:1."
+        },
+        "tokens": {
+          "dark": {
+            "--bg": "#000000",
+            "--bg-2": "#050505",
+            "--surface": "#0a0a0a",
+            "--surface-2": "#121212",
+            "--surface-3": "#1a1a1a",
+            "--line": "#8c8c8c",
+            "--line-2": "#b8b8b8",
+            "--text": "#ffffff",
+            "--text-2": "#f2f2f2",
+            "--muted": "#d9d9d9",
+            "--ok": "#3ddc84",
+            "--ok-text": "#6ff0a6",
+            "--warn": "#ffd23f",
+            "--warn-text": "#ffdf70",
+            "--err": "#ff8a93",
+            "--err-text": "#ffa3aa",
+            "--info": "#6cb6ff",
+            "--input-bg": "#000000",
+            "--console-bg": "#000000",
+            "--ok-soft": "rgba(61, 220, 132, 0.2)",
+            "--warn-soft": "rgba(255, 210, 63, 0.2)",
+            "--err-soft": "rgba(255, 138, 147, 0.2)",
+            "--info-soft": "rgba(108, 182, 255, 0.2)",
+            "--shadow": "0 0 0 1px rgba(255, 255, 255, 0.35)",
+            "--shadow-lg": "0 0 0 2px rgba(255, 255, 255, 0.45)"
+          },
+          "light": {
+            "--bg": "#ffffff",
+            "--bg-2": "#f7f7f7",
+            "--surface": "#ffffff",
+            "--surface-2": "#f5f5f5",
+            "--surface-3": "#ebebeb",
+            "--line": "#5c5c5c",
+            "--line-2": "#333333",
+            "--text": "#000000",
+            "--text-2": "#111111",
+            "--muted": "#2b2b2b",
+            "--ok": "#00703c",
+            "--ok-text": "#005a30",
+            "--warn": "#8f5700",
+            "--warn-text": "#6b4100",
+            "--err": "#b0001e",
+            "--err-text": "#8f0018",
+            "--info": "#0050b8",
+            "--input-bg": "#ffffff",
+            "--console-bg": "#000000",
+            "--ok-soft": "rgba(0, 112, 60, 0.14)",
+            "--warn-soft": "rgba(143, 87, 0, 0.14)",
+            "--err-soft": "rgba(176, 0, 30, 0.12)",
+            "--info-soft": "rgba(0, 80, 184, 0.12)",
+            "--shadow": "0 0 0 1px rgba(0, 0, 0, 0.55)",
+            "--shadow-lg": "0 0 0 2px rgba(0, 0, 0, 0.6)"
+          }
+        },
+        "accent": "#1f6fe5",
+        "accents": [
+          "#1f6fe5",
+          "#8a4fd8",
+          "#c2410c",
+          "#0f7d5c"
+        ],
+        "radius": 0.6,
+        "density": "comfortable"
+      },
+      {
+        "id": "calm",
+        "title": {
+          "de": "Ruhig",
+          "en": "Calm"
+        },
+        "description": {
+          "de": "Gedämpftes Salbei und Schiefer, weiche Ecken, etwas mehr Luft – angenehm für lange Abende.",
+          "en": "Muted sage and slate, soft corners, a little more room – easy on the eyes for long evenings."
+        },
+        "tokens": {
+          "dark": {
+            "--bg": "#141719",
+            "--bg-2": "#171b1d",
+            "--surface": "#1b1f21",
+            "--surface-2": "#202527",
+            "--surface-3": "#272c2f",
+            "--line": "#2e3538",
+            "--line-2": "#3a4245",
+            "--text": "#dde3e0",
+            "--text-2": "#b7c0bc",
+            "--muted": "#97a19d",
+            "--ok": "#72bf9c",
+            "--ok-text": "#7fc8a7",
+            "--warn": "#d4b26c",
+            "--warn-text": "#d9bb7c",
+            "--err": "#e08c8c",
+            "--err-text": "#e59c9b",
+            "--info": "#86a9cf",
+            "--input-bg": "#171b1d",
+            "--console-bg": "#0f1213",
+            "--ok-soft": "rgba(114, 191, 156, 0.13)",
+            "--warn-soft": "rgba(212, 178, 108, 0.13)",
+            "--err-soft": "rgba(224, 140, 140, 0.13)",
+            "--info-soft": "rgba(134, 169, 207, 0.13)",
+            "--shadow": "0 8px 24px -12px rgba(0, 0, 0, 0.5), 0 2px 6px -2px rgba(0, 0, 0, 0.3)"
+          },
+          "light": {
+            "--bg": "#f2f3f0",
+            "--bg-2": "#ebede8",
+            "--surface": "#fafaf8",
+            "--surface-2": "#f3f4f1",
+            "--surface-3": "#e8eae5",
+            "--line": "#dadecf",
+            "--line-2": "#c9cec5",
+            "--text": "#222829",
+            "--text-2": "#3c4544",
+            "--muted": "#55605c",
+            "--ok": "#3b7a5d",
+            "--ok-text": "#2e684e",
+            "--warn": "#876818",
+            "--warn-text": "#6f5512",
+            "--err": "#a5474a",
+            "--err-text": "#913a3d",
+            "--info": "#3e6e9c",
+            "--input-bg": "#fafaf8",
+            "--ok-soft": "rgba(59, 122, 93, 0.11)",
+            "--warn-soft": "rgba(135, 104, 24, 0.11)",
+            "--err-soft": "rgba(165, 71, 74, 0.1)",
+            "--info-soft": "rgba(62, 110, 156, 0.1)",
+            "--shadow": "0 8px 24px -14px rgba(34, 40, 41, 0.22), 0 2px 6px -3px rgba(34, 40, 41, 0.12)"
+          }
+        },
+        "accent": "#588878",
+        "accents": [
+          "#588878",
+          "#6880a5",
+          "#86769f",
+          "#9a7b5b"
+        ],
+        "radius": 1.35,
+        "density": "comfortable"
+      },
+      {
+        "id": "warm",
+        "title": {
+          "de": "Warm",
+          "en": "Warm"
+        },
+        "description": {
+          "de": "Sandige Flächen, Terrakotta als Akzent und warmes Licht am Abend.",
+          "en": "Sandy surfaces, terracotta as the accent and warm light in the evening."
+        },
+        "tokens": {
+          "dark": {
+            "--bg": "#16110e",
+            "--bg-2": "#1a1411",
+            "--surface": "#201915",
+            "--surface-2": "#271f1a",
+            "--surface-3": "#30261f",
+            "--line": "#392d25",
+            "--line-2": "#4a3b30",
+            "--text": "#f4eae2",
+            "--text-2": "#d8c8bb",
+            "--muted": "#b39f91",
+            "--ok": "#80cf90",
+            "--ok-text": "#8dd69b",
+            "--warn": "#f0b45c",
+            "--warn-text": "#f4bf72",
+            "--err": "#ff8c75",
+            "--err-text": "#ff9f8b",
+            "--info": "#82b3e4",
+            "--input-bg": "#1a1411",
+            "--console-bg": "#0f0b09",
+            "--ok-soft": "rgba(128, 207, 144, 0.13)",
+            "--warn-soft": "rgba(240, 180, 92, 0.14)",
+            "--err-soft": "rgba(255, 140, 117, 0.13)",
+            "--info-soft": "rgba(130, 179, 228, 0.13)",
+            "--shadow": "0 10px 30px -12px rgba(0, 0, 0, 0.6), 0 2px 6px -2px rgba(0, 0, 0, 0.4)"
+          },
+          "light": {
+            "--bg": "#fbf5ee",
+            "--bg-2": "#f6eee4",
+            "--surface": "#fffbf6",
+            "--surface-2": "#faf3ea",
+            "--surface-3": "#f2e8dc",
+            "--line": "#e8dccd",
+            "--line-2": "#d9c8b6",
+            "--text": "#2a1d16",
+            "--text-2": "#4a392e",
+            "--muted": "#6c594b",
+            "--ok": "#2f7c45",
+            "--ok-text": "#266a39",
+            "--warn": "#965800",
+            "--warn-text": "#7b4800",
+            "--err": "#b53e28",
+            "--err-text": "#9e3422",
+            "--info": "#2e68a6",
+            "--input-bg": "#fffbf6",
+            "--ok-soft": "rgba(47, 124, 69, 0.11)",
+            "--warn-soft": "rgba(150, 88, 0, 0.12)",
+            "--err-soft": "rgba(181, 62, 40, 0.1)",
+            "--info-soft": "rgba(46, 104, 166, 0.1)",
+            "--shadow": "0 10px 28px -14px rgba(74, 46, 26, 0.28), 0 2px 6px -3px rgba(74, 46, 26, 0.14)"
+          }
+        },
+        "accent": "#c25a2c",
+        "accents": [
+          "#c25a2c",
+          "#ad7026",
+          "#b8675d",
+          "#5f8a4a"
+        ],
+        "radius": 1.2,
+        "density": "normal"
+      }
+    ]
+  }
+}
