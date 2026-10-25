@@ -4,9 +4,9 @@
 
 Three carefully tuned themes for Hostwerk – “High contrast” for weaker eyesight, “Calm” and “Warm”, each in light and dark and checked for good readability.
 
-[Deutsch](README.de.md) · An official [Hostwerk](https://github.com/Passimoritz/hostwerk-public) extension (SDK 2.9, theme package)
+[Deutsch](README.de.md) · An official [Hostwerk](https://github.com/Passimoritz/hostwerk-public) extension (theme package, Hostwerk 2.11 or newer)
 
-## The themes
+## What it does
 
 | Theme | Character | Weakest text contrast (dark / light) | Status colours (dark / light) |
 |---|---|---|---|
@@ -19,7 +19,7 @@ Every value is checked on all five surfaces and the input fields. WCAG 2.2 AA as
 Each theme brings its own accent and a few suggestions – Hostwerk derives readable button, link and focus colours from them.
 A colour you picked yourself (Settings → General) still wins.
 
-## Use
+## Install
 
 1. In Hostwerk: **Extensions → Discover**, install “Themes”.
 2. **Settings → General → Appearance → Theme** – the change is visible right away, in light and dark mode.

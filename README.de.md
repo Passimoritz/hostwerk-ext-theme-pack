@@ -4,9 +4,9 @@
 
 Drei sorgfältig abgestimmte Farbschemata für Hostwerk – „Hoher Kontrast“ für schwächere Augen, „Ruhig“ und „Warm“, jeweils hell und dunkel und auf gute Lesbarkeit geprüft.
 
-[English](README.md) · Eine offizielle [Hostwerk](https://github.com/Passimoritz/hostwerk-public)-Erweiterung (SDK 2.9, Farbschema-Paket)
+[English](README.md) · Offizielle [Hostwerk](https://github.com/Passimoritz/hostwerk-public)-Erweiterung (Farbschema-Paket, ab Hostwerk 2.11)
 
-## Die Schemata
+## Was sie kann
 
 | Schema | Charakter | Schwächster Textkontrast (dunkel / hell) | Zustandsfarben (dunkel / hell) |
 |---|---|---|---|
@@ -19,7 +19,7 @@ Jeder Wert ist auf allen fünf Flächen und in Eingabefeldern nachgerechnet. WCA
 mindestens 3:1. Jedes Schema bringt einen eigenen Akzent und ein paar Vorschläge mit – Hostwerk leitet daraus lesbare
 Knopf-, Link- und Fokusfarben ab. Eine selbst gewählte Farbe (Einstellungen → Allgemein) hat weiter Vorrang.
 
-## Benutzen
+## Installieren
 
 1. In Hostwerk: **Erweiterungen → Entdecken**, „Farbschemata“ installieren.
 2. **Einstellungen → Allgemein → Darstellung → Farbschema** – der Wechsel ist sofort sichtbar, in Hell und Dunkel.
