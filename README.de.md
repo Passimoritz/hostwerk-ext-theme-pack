@@ -1,6 +1,6 @@
-![Farbschemata](banner.svg)
+![Farbschema-Paket](banner.svg)
 
-# Farbschemata
+# Farbschema-Paket
 
 Drei sorgfältig abgestimmte Farbschemata für Hostwerk – „Hoher Kontrast“ für schwächere Augen, „Ruhig“ und „Warm“, jeweils hell und dunkel und auf gute Lesbarkeit geprüft.
 
@@ -17,7 +17,8 @@ Drei sorgfältig abgestimmte Farbschemata für Hostwerk – „Hoher Kontrast“
 Jeder Wert ist auf allen fünf Flächen und in Eingabefeldern nachgerechnet. WCAG 2.2 AA verlangt 4,5:1 (Text) und 3:1
 (Zustandsfarben); „Hoher Kontrast“ geht weiter: jeder Text mindestens 7:1 (AAA), Zustandsfarben mindestens 4,5:1, Linien
 mindestens 3:1. Jedes Schema bringt einen eigenen Akzent und ein paar Vorschläge mit – Hostwerk leitet daraus lesbare
-Knopf-, Link- und Fokusfarben ab. Eine selbst gewählte Farbe (Einstellungen → Allgemein) hat weiter Vorrang.
+Knopf-, Link- und Fokusfarben ab; jeder Akzent trägt außerdem weiße Schrift mit mindestens 4,5:1. „Hoher Kontrast“ hat je Modus
+einen eigenen Akzent: im Hellen ein dunkles Blau mit 8:1 auf Weiß (Links AAA), im Dunklen ein helles Blau mit 8,6:1 auf Schwarz. Eine selbst gewählte Farbe (Einstellungen → Allgemein) hat weiter Vorrang.
 
 ## Installieren
 

@@ -1,6 +1,6 @@
-![Themes](banner.svg)
+![Theme pack](banner.svg)
 
-# Themes
+# Theme pack
 
 Three carefully tuned themes for Hostwerk – “High contrast” for weaker eyesight, “Calm” and “Warm”, each in light and dark and checked for good readability.
 
@@ -16,8 +16,9 @@ Three carefully tuned themes for Hostwerk – “High contrast” for weaker eye
 
 Every value is checked on all five surfaces and the input fields. WCAG 2.2 AA asks for 4.5:1 (text) and 3:1 (status colours);
 “High contrast” goes further: every text at least 7:1 (AAA), status colours at least 4.5:1, lines at least 3:1.
-Each theme brings its own accent and a few suggestions – Hostwerk derives readable button, link and focus colours from them.
-A colour you picked yourself (Settings → General) still wins.
+Each theme brings its own accent and a few suggestions – Hostwerk derives readable button, link and focus colours from them;
+every accent also carries white text at 4.5:1 or more. “High contrast” has its own accent per mode:
+a dark blue at 8:1 on white in light mode (AAA links) and a light blue at 8.6:1 on black in dark mode. A colour you picked yourself (Settings → General) still wins.
 
 ## Install
 

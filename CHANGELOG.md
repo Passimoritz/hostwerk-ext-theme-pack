@@ -1,3 +1,7 @@
+## Unreleased
+
+- “High contrast”: own accent per mode – links and accent at 8:1 on white in light mode (AAA), a light blue at 8.6:1 on black in dark mode (needs Hostwerk with `accentDark`). / „Hoher Kontrast“: eigener Akzent je Modus – Links und Akzent im Hellen 8:1 auf Weiß (AAA), im Dunklen ein helles Blau mit 8,6:1 auf Schwarz (braucht Hostwerk mit `accentDark`).
+
 ## 1.0.1
 
 - New animated icon and banner in the common Hostwerk style (isometric block). / Neues animiertes Symbol und Banner im gemeinsamen Hostwerk-Stil (isometrischer Block).

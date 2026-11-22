@@ -11,7 +11,9 @@ const path = require('path');
 const manifest = require('../manifest.json');
 
 const themes = manifest.contributes.themes;
-const COLORS = ['--bg', '--bg-2', '--surface', '--surface-2', '--surface-3', '--line', '--line-2', '--text', '--text-2', '--muted', '--ok', '--ok-text', '--warn', '--warn-text', '--err', '--err-text', '--info', '--input-bg'];
+const COLORS = ['--bg', '--bg-2', '--surface', '--surface-2', '--surface-3', '--line', '--line-2', '--text', '--text-2', '--muted', '--ok', '--ok-text', '--warn', '--warn-text', '--err', '--err-text', '--info', '--input-bg', '--console-bg'];
+/** Schrift in Konsole, Protokollen und Code-Blöcken – in Hostwerk fest (styles.css .console/.code-block), nur --console-bg kommt vom Schema. */
+const CONSOLE_TEXT = '#d6dbe7';
 const SURFACES = ['--bg', '--bg-2', '--surface', '--surface-2', '--surface-3', '--input-bg'];
 const TEXT = ['--text', '--text-2', '--muted', '--ok-text', '--warn-text', '--err-text'];
 const UI = ['--ok', '--warn', '--err', '--info'];
@@ -69,10 +71,28 @@ for (const th of themes) {
     });
   }
 
-  test(`${th.id}: jeder Akzent ≥ 3:1 auf allen Flächen in hell und dunkel`, () => {
+  // accentDark (SDK 3.16): eigener Akzent für Dunkel – dann gilt accent nur im Hellen (Hostwerk prüft je Modus)
+  const modesOf = (a) => (th.accentDark && a === th.accent ? ['light'] : ['dark', 'light']);
+  test(`${th.id}: jeder Akzent ≥ 3:1 auf allen Flächen seines Modus`, () => {
     const list = [th.accent, ...(th.accents || [])];
     assert.ok(list.length >= 2 && list.length <= 9);
-    for (const a of list) for (const mode of ['dark', 'light']) assert.ok(worst(th.tokens[mode], a) >= 3, `${a} ${mode}: ${worst(th.tokens[mode], a).toFixed(2)}:1`);
+    for (const a of list) for (const mode of modesOf(a)) assert.ok(worst(th.tokens[mode], a) >= 3, `${a} ${mode}: ${worst(th.tokens[mode], a).toFixed(2)}:1`);
+    if (th.accentDark) assert.ok(worst(th.tokens.dark, th.accentDark) >= 3, `accentDark ${th.accentDark}`);
+  });
+
+  test(`${th.id}: weiße Schrift auf jedem Akzent ≥ 4.5:1`, () => {
+    // Hostwerk legt an einigen Stellen weiße Schrift direkt auf --accent (Zähler in der Seitenleiste, „Zum Inhalt springen“,
+    // Schritt-Nummern, aktive KI-Kategorie) – der Akzent des Schemas muss das tragen, nicht nur der abgeleitete Knopfton.
+    // Ausnahme accentDark: ein heller Akzent für dunkle Flächen trägt keine weiße Schrift – dort nimmt Hostwerk --accent-contrast.
+    for (const a of [th.accent, ...(th.accents || [])]) assert.ok(ratio('#ffffff', a) >= 4.5, `${a}: ${ratio('#ffffff', a).toFixed(2)}:1`);
+  });
+
+  test(`${th.id}: Konsole bleibt dunkel und lesbar (hell und dunkel)`, () => {
+    for (const mode of ['dark', 'light']) assert.ok(ratio(CONSOLE_TEXT, th.tokens[mode]['--console-bg']) >= 7, `${mode} ${th.tokens[mode]['--console-bg']}`);
+  });
+
+  test(`${th.id}: Schatten in beiden Modi selbst gesetzt`, () => {
+    for (const mode of ['dark', 'light']) for (const k of ['--shadow', '--shadow-lg']) assert.ok(th.tokens[mode][k], `${mode} ${k}`);
   });
 
   test(`${th.id}: Rundung und Dichte im erlaubten Bereich`, () => {
@@ -81,7 +101,20 @@ for (const th of themes) {
   });
 }
 
+test('Hoher Kontrast: Links/Akzent hell ≥ 7:1 (AAA), dunkel eigener Akzent ≥ 7:1', () => {
+  const hc = themes.find((t) => t.id === 'high-contrast');
+  assert.ok(hc.accentDark, 'accentDark gesetzt');
+  // Hostwerk nimmt einen Akzent, der schon lesbar ist, unverändert als Link-/Textfarbe (--accent-text)
+  assert.ok(worst(hc.tokens.light, hc.accent) >= 7, `hell ${hc.accent}: ${worst(hc.tokens.light, hc.accent).toFixed(2)}:1`);
+  assert.ok(worst(hc.tokens.dark, hc.accentDark) >= 7, `dunkel ${hc.accentDark}: ${worst(hc.tokens.dark, hc.accentDark).toFixed(2)}:1`);
+  assert.ok(ratio('#ffffff', hc.accent) >= 7, 'Knöpfe im Hellen: weiße Schrift ≥ 7:1');
+});
+
 test('Hostwerks eigene Prüfung (falls HOSTWERK_CHECK gesetzt)', { skip: !process.env.HOSTWERK_CHECK }, () => {
   const sdk = require(path.resolve(process.env.HOSTWERK_CHECK));
   for (const th of themes) assert.deepStrictEqual(sdk.themeReport(th).errors, [], th.id);
+});
+
+test('eindeutiger Name in der Auswahl („Hoher Kontrast – Farbschema-Paket“ statt „… – Themes“)', () => {
+  assert.deepStrictEqual(manifest.name, { de: 'Farbschema-Paket', en: 'Theme pack' });
 });
